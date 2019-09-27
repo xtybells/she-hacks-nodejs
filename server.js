@@ -9,7 +9,7 @@ mongoose.connect(
   connectionString,
   { useNewUrlParser: true, useUnifiedTopology: true },
   err => {
-    console.log(err);
+    console.log(err);  
   }
 );
 
@@ -25,6 +25,6 @@ app.use("*", (req, res) => {
 });
 //attach the server to a port(1)
 //go to the browser and type the port(2)
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("server running at port:3000");
 });
